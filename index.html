@@ -9,14 +9,51 @@
     <style type="text/css">
         br { display: none; }
          textarea, iframe{display: block;margin: 10px 0;width:100%;border: 1px solid #333;}
+        .tool_input{
+    padding: 15px;
+    border-radius: 9px;
+    width: 618px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    border: 0;
+    margin-right: 25px;
+}
+.tool_button{
+    padding: 15px;
+    border-radius: 70px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    border: 0;
+    background-color: #673ab7;
+    color: white;
+    height: 42px;
+}
+.tool_form{
+    display: block;
+    margin-left: 387px;
+    margin-top: 48px;
+}
+.tool_output{
+    margin: 0px;
+    width: 568px;
+    height: 499px;
+    display: block;
+    width: 618px;
+    margin-left: 79px;
+    margin-top: 15px;
+    /* padding: 15px; */
+    width: 618px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    border: 0;
+    border-radius: 9px;
+}
+
     </style>
 </head>
 <body style="display: inline-flex;">
-    <textarea rows="5" cols="50" placeholder="Type HTML or text here..."></textarea>
+    <textarea rows="5" cols="50" class="tool_input" placeholder="Type HTML or text here..."></textarea><br>
 
-<button style="border:0" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i> Run Code </button>
+    <button class="tool_button" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i> Run Code </button>
 
-<iframe id="myframe"></iframe>
+<iframe id="myframe" class="tool_output"></iframe>
     
 </body>
 <script type="text/javascript">
