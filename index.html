@@ -4,63 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Powerful HTML Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style type="text/css">
-        br { display: none; }
-         textarea, iframe{display: block;margin: 10px 0;width:100%;border: 1px solid #333;}
-        .tool_input{
-    padding: 15px;
-    border-radius: 9px;
-    width: 618px;
-    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-    border: 0;
-    margin-right: 25px;
-}
-.tool_button{
-    padding: 15px;
-    border-radius: 70px;
-    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-    border: 0;
-    background-color: #673ab7;
-    color: white;
-    height: 42px;
-}
-.tool_form{
-    display: block;
-    margin-left: 387px;
-    margin-top: 48px;
-}
-.tool_output{
-    margin: 0px;
-    width: 568px;
-    height: 499px;
-    display: block;
-    width: 618px;
-    margin-left: 79px;
-    margin-top: 15px;
-    /* padding: 15px; */
-    width: 618px;
-    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-    border: 0;
-    border-radius: 9px;
-}
+        /* Reset default browser styles */
+        body, button, textarea, iframe {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .tool_container {
+            width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool_input {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tool_button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 70px;
+            background-color: #673ab7;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .tool_button:hover {
+            background-color: #501b8a;
+        }
+
+        .tool_output {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
     </style>
 </head>
-<body style="display: inline-flex;">
-    <textarea rows="5" cols="50" class="tool_input" placeholder="Type HTML or text here..."></textarea><br>
-
-    <button class="tool_button" type="button" onclick="updateIframe()"><i class="fa fa-pencil-square-o"></i> Run Code </button>
-
-<iframe id="myframe" class="tool_output"></iframe>
-    
+<body>
+    <div class="tool_container">
+        <textarea rows="5" class="tool_input" placeholder="Type HTML or text here..."></textarea>
+        <button class="tool_button" type="button" onclick="updateIframe()">Run Code</button>
+        <iframe id="myframe" class="tool_output"></iframe>
+    </div>
 </body>
 <script type="text/javascript">
-    function updateIframe(){
-    var myFrame = $("#myframe").contents().find('body');
-    var textareaValue = $("textarea").val();
-    myFrame.html(textareaValue);
+    function updateIframe() {
+        var myFrame = $("#myframe").contents().find('body');
+        var textareaValue = $("textarea").val();
+        myFrame.html(textareaValue);
     }
-   </script>
+</script>
 </html>
